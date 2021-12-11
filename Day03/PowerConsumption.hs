@@ -28,4 +28,4 @@ commonalityDistribution = foldr (zipWith (+)) [0..]
 
 binaryToInt :: [Int] -> Int
 binaryToInt [] = 0
-binaryToInt binary@(x:xs) = x * 2 ^ length binary + binaryToInt xs
+binaryToInt binary@(x:xs) = x * 2 ^ (length binary - 1) + binaryToInt xs
