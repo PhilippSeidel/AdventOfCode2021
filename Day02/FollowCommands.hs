@@ -13,8 +13,8 @@ followCommands :: Int -> Int -> [String] -> Int
 followCommands depth horizontal [] = depth * horizontal
 followCommands depth horizontal (command:parameter:rest)
             | command == "forward" = followCommands depth (horizontal + parseToInt parameter) rest
-            | command == "up" = followCommands (depth + parseToInt parameter) horizontal rest
-            | command == "down" = followCommands (depth - parseToInt parameter) horizontal rest
+            | command == "up" = followCommands (depth - parseToInt parameter) horizontal rest
+            | command == "down" = followCommands (depth + parseToInt parameter) horizontal rest
             | otherwise = error "unknown command"
 followCommands _ _ [x] = error "unequal number of commands and parameters"
 
